@@ -1,0 +1,103 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  background: url('./paisley.jpg');
+}
+
+.slot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  background: white;
+  background-color: rgba(255,255,255,0.9);
+  border-radius: 10px;
+  box-shadow: 0 0 1rem black;
+}
+
+.container {
+  padding: 5px;
+  display: flex;
+  margin-bottom: 10px;
+  background: #111;
+  border-radius: 9px;
+}
+
+.reel {
+  width: 140px;
+  height: 240px;
+  border: 1px solid #5a5a5a;
+  background: url('./reel.png') repeat-y;
+  background-size: cover;
+  transition: background-position 1s ease-out;
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.reel::before {
+  content: '';
+  background: rgb(0,0,0);
+  background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,0) 70%, rgba(0,0,0,1) 100%);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.reel:not(:last-of-type) {
+  margin-right: 5px;
+}
+
+.reel1 {
+  background-position: 0 60px;
+}
+
+.reel2 {
+  background-position: 0 180px;
+  transition-delay: .25s;
+}
+
+.reel3 {
+  background-position: 0 300px;
+  transition-delay: .5s;
+}
+
+.spin-button {
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-size: 24px;
+  font-style: normal;
+  text-shadow: 0px -1px 0px rgba(0,0,0,0.4);
+  text-decoration: none;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  box-shadow: inset 0px 1px 0px rgba(255,255,255,1),0px 1px 3px rgba(0,0,0,0.3);
+  outline: none;
+  border: 1px solid #ba6;
+  backface-visibility: hidden;
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  white-space: nowrap;
+  border-color: #7c7c7c;
+  background: linear-gradient(180deg,#e6e6e6 0%,rgba(0, 0, 0, 0.25) 49%, rgba(38, 38, 38, 0.6) 51%,rgba(0, 0, 0, 0.25) 100%);
+  border-radius: 5px;
+}
+
+.spin-button:active {
+  transform: translateY(2px);
+}
+
+.outcome-text {
+  margin-top: 20px;
+  font-size: 2em;
+
+}
